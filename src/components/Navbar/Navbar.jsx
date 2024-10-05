@@ -15,13 +15,13 @@ export function Navbar({ className }) {
     >
       <h1 className="text-white">BEM FMIKOM </h1>
       <Menu setActive={setActive}>
-        <HoveredLink to="/beranda">Beranda</HoveredLink>
-        <HoveredLink to="/Tentang">Tentang</HoveredLink>
+        <HoveredLink to="/">Beranda</HoveredLink>
+        <HoveredLink to="/tentang">Tentang</HoveredLink>
         <MenuItem setActive={setActive} active={active} item="Kabinet">
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink to="/struktur">Struktur</HoveredLink>{' '}
             <HoveredLink to="/presiden">Presiden</HoveredLink>
-            <HoveredLink to="/wakil-presiden">Wakil Presiden</HoveredLink>
+            <HoveredLink to="/wapres">Wakil Presiden</HoveredLink>
             <HoveredLink to="/departemen">Departemen</HoveredLink>
           </div>
         </MenuItem>
