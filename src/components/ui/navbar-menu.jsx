@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from '@mui/material';
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 
 const transition = {
   type: 'spring',
@@ -76,30 +76,12 @@ export const MenuItem = ({ setActive, active, item, children }) => {
 
 export const Menu = ({ setActive, children }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const menuRef = useRef(null);
   const handleToggle = () => {
     setIsOpen((prev) => !prev);
   };
-
-  // Fungsi untuk menutup menu jika klik di luar menu
-  const handleClickOutside = (event) => {
-    if (menuRef.current && !menuRef.current.contains(event.target)) {
-      setIsOpen(false); // Tutup menu
-    }
-  };
-
-  // Menggunakan effect untuk menambahkan event listener
-  useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside); // Bersihkan event listener
-    };
-  }, []);
-
   return (
     <>
       <div
-        ref={menuRef}
         className={`absolute ${
           isOpen ? 'right-0' : 'right-[-300px]'
         } top-[100%] w-[250px] md:w-auto md:h-auto md:static dark:bg-black h-screen transition-all duration-300 ease-in-out`}
