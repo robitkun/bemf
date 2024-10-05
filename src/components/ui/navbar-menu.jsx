@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from '@mui/material';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const transition = {
   type: 'spring',
@@ -50,7 +50,7 @@ export const MenuItem = ({ setActive, active, item, children }) => {
             <div
               className={`${
                 isTablet ? 'static' : 'absolute'
-              } top-[calc(100%_+_1.2rem)] left-1/2 transform ${
+              } top-[calc(100%_+_0.8rem)] left-1/2 transform ${
                 !isTablet ? '-translate-x-1/2' : ''
               } pt-4`}
             >
@@ -75,15 +75,48 @@ export const MenuItem = ({ setActive, active, item, children }) => {
 };
 
 export const Menu = ({ setActive, children }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
+  const handleToggle = () => {
+    setIsOpen((prev) => !prev);
+  };
+
+  // Fungsi untuk menutup menu jika klik di luar menu
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setIsOpen(false); // Tutup menu
+    }
+  };
+
+  // Menggunakan effect untuk menambahkan event listener
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside); // Bersihkan event listener
+    };
+  }, []);
+
   return (
-    <div className="absolute right-0 top-[100%] w-[250px] md:w-auto md:h-auto md:static dark:bg-black h-screen">
-      <nav
-        onMouseLeave={() => setActive(null)} // resets the state
-        className="flex-col gap-4 md:flex-row relative dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center gap-x-2 space-x-0 md:space-x-4 px-8 "
+    <>
+      <div
+        ref={menuRef}
+        className={`absolute ${
+          isOpen ? 'right-0' : 'right-[-300px]'
+        } top-[100%] w-[250px] md:w-auto md:h-auto md:static dark:bg-black h-screen transition-all duration-300 ease-in-out`}
       >
-        {children}
-      </nav>
-    </div>
+        <nav
+          onMouseLeave={() => setActive(null)} // resets the state
+          className="flex-col gap-4 md:flex-row relative border-white/[0.2] bg-black shadow-input flex justify-center gap-x-2 space-x-0 md:space-x-4 px-8 py-4"
+        >
+          {children}
+        </nav>
+      </div>
+      <div className="block md:hidden z-50">
+        <button onClick={handleToggle} className="text-2xl text-white">
+          ☰
+        </button>
+      </div>
+    </>
   );
 };
 
