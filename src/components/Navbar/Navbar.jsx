@@ -19,9 +19,8 @@ export function Navbar({ className }) {
         <HoveredLink to="/tentang">Tentang</HoveredLink>
         <MenuItem setActive={setActive} active={active} item="Kabinet">
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink to="/struktur">Struktur</HoveredLink>{' '}
-            <HoveredLink to="/presiden">Presiden</HoveredLink>
-            <HoveredLink to="/wapres">Wakil Presiden</HoveredLink>
+            <HoveredLink to="/presiden">Gubernur</HoveredLink>
+            <HoveredLink to="/wapres">Wakil Gubernur</HoveredLink>
             <HoveredLink to="/departemen">Departemen</HoveredLink>
           </div>
         </MenuItem>

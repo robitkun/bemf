@@ -1,23 +1,30 @@
-import { BackgroundBeamsWithCollision } from '../components/ui/BackgroundHero';
+import Footer from '../components/Footer/Footer';
+import Tentang from '../components/Tentang/Tentang';
+import { Spotlight } from '../components/ui/Spotlight';
 
 function Hero() {
   return (
-    <div>
-      <BackgroundBeamsWithCollision>
-        <h2 className="text-2xl relative z-20 md:text-4xl lg:text-7xl font-bold text-center text-black dark:text-white font-sans tracking-tight">
-          BEM FMIKOM
-          <br />
-          <div className="relative mx-auto inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
-            <div className="absolute left-0 top-[1px] bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 via-violet-500 to-pink-500 [text-shadow:0_0_rgba(0,0,0,0.1)]">
-              <span className="">UNUGHA 2024</span>
-            </div>
-            <div className="relative bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 py-4">
-              <span className="">UNUGHA 2024</span>
-            </div>
-          </div>
-        </h2>
-      </BackgroundBeamsWithCollision>
-    </div>
+    <>
+      <div className="h-screen w-full rounded-md flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
+        <Spotlight
+          className="top-10 left-0 md:left-60 md:-top-20"
+          fill="white"
+        />
+        <div className=" p-4 max-w-7xl  mx-auto relative z-10  w-full pt-20 md:pt-0">
+          <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+            Spotlight <br /> is the new trend.
+          </h1>
+          <p className="mt-4 font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">
+            Spotlight effect is a great way to draw attention to a specific part
+            of the page. Here, we are drawing the attention towards the text
+            section of the page. I don&apos;t know why but I&apos;m running out
+            of copy.
+          </p>
+        </div>
+      </div>
+      <Tentang />
+      <Footer />
+    </>
   );
 }
 
