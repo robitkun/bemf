@@ -84,7 +84,7 @@ export const Menu = ({ setActive, children }) => {
       <div
         className={`absolute ${
           isOpen ? 'right-0' : 'right-[-300px]'
-        } top-[100%] w-[250px] md:w-auto md:h-auto md:static dark:bg-black h-screen transition-all duration-300 ease-in-out`}
+        } top-[100%] w-[250px] md:w-auto md:h-auto md:static bg-black h-screen transition-all duration-300 ease-in-out`}
       >
         <nav
           onMouseLeave={() => setActive(null)} // resets the state
