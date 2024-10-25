@@ -9,7 +9,7 @@ export function Navbar({ className }) {
   return (
     <div
       className={cn(
-        'fixed top-0 inset-x-0 w-full mx-auto z-50 flex items-center justify-between bg-black px-4 py-2 md:px-8',
+        'fixed top-0 inset-x-0 w-full mx-auto z-50 flex items-center justify-between bg-zinc-900 px-4 py-2 md:px-8',
         className
       )}
     >

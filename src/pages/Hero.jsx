@@ -1,34 +1,28 @@
-import Footer from '../components/Footer/Footer';
-import Tentang from '../components/Tentang/Tentang';
-import { Spotlight } from '../components/ui/Spotlight';
-
-function Hero() {
+const Hero = () => {
   return (
     <>
-      <div className="h-screen w-full rounded-md flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden pt-[100px]">
-        <Spotlight
-          className="top-10 left-0 md:left-60 md:-top-20"
-          fill="white"
-        />
-        <div className=" p-4 max-w-7xl flex items-center justify-center flex-col  mx-auto relative z-10  w-full pt-20 md:pt-0">
-          <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-            Welcome <br />
-            BEM FMIKOM <br />
-            UNUGHA <br />
-            2024
-          </h1>
-          <p className="mt-4 font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">
-            Spotlight effect is a great way to draw attention to a specific part
-            of the page. Here, we are drawing the attention towards the text
-            section of the page. I don&apos;t know why but I&apos;m running out
-            of copy.
-          </p>
+      <div className="w-full h-screen bg-zinc-900  rounded-lg">
+        <div className="textStructure pt-40 px-20 text-white">
+          <div className="masker ">
+            <h1 className="uppercase  font-semibold font-['Poppins',_sans-serif]  text-7xl  tracking-tighter">
+              WELC<span className="text-yellow-500">O</span>ME
+            </h1>
+          </div>
+          <div className="masker">
+            <h1 className="uppercase  font-semibold text-7xl font-['Poppins',_sans-serif]   tracking-tighter">
+              T<span className="text-green-500">O</span> BEMF UNUGHA
+            </h1>
+          </div>
+          <div className="masker">
+            <h1 className="uppercase font-semibold text-6xl font-['Poppins',_sans-serif]  tracking-tighter">
+              2024
+            </h1>
+          </div>
         </div>
+        <div className="border-t-[1px] border-white mt-24"></div>
       </div>
-      <Tentang />
-      <Footer />
     </>
   );
-}
+};
 
 export default Hero;

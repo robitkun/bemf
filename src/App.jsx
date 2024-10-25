@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Navbar } from './components/Navbar/Navbar';
-import Hero from './pages/Hero';
 import Tentang from './pages/Tentang';
 import Struktur from './pages/Struktur';
 import Presiden from './pages/Presiden';
@@ -8,12 +7,13 @@ import WakilPresiden from './pages/Wapres';
 import KabarFmik from './pages/KabarFmik';
 import KabarProker from './pages/KabarProker';
 import Event from './pages/Event';
+import LandingPage from './pages/LandingPage';
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Hero />} />
+        <Route path="/" element={<LandingPage />} />
         <Route path="/tentang" element={<Tentang />} />
         <Route path="/struktur" element={<Struktur />} />
         <Route path="/presiden" element={<Presiden />} />
