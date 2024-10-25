@@ -1,7 +1,7 @@
 import { Navbar } from '../components/Navbar/Navbar';
 import Hero from './Hero';
 import Tentang from '../components/Tentang/Tentang';
-import Event from '../components/Event/Event';
+import OurTeam from '../components/OurTeam/OurTeam';
 
 const LandingPage = () => {
   return (
@@ -9,7 +9,7 @@ const LandingPage = () => {
       <Navbar />
       <Hero />
       <Tentang />
-      <Event />
+      <OurTeam />
     </div>
   );
 };

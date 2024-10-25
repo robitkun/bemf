@@ -57,7 +57,7 @@ export const MenuItem = ({ setActive, active, item, children }) => {
               <motion.div
                 transition={transition}
                 layoutId="active" // layoutId ensures smooth animation
-                className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
+                className="bg-yellow-500 backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
               >
                 <motion.div
                   layout // layout ensures smooth animation
@@ -84,11 +84,11 @@ export const Menu = ({ setActive, children }) => {
       <div
         className={`absolute ${
           isOpen ? 'right-0' : 'right-[-300px]'
-        } top-[100%] w-[250px] md:w-auto md:h-auto md:static bg-black h-screen transition-all duration-300 ease-in-out`}
+        } top-[100%] w-[250px] md:w-auto md:h-auto md:static bg-zinc-900 h-screen transition-all duration-300 ease-in-out`}
       >
         <nav
           onMouseLeave={() => setActive(null)} // resets the state
-          className="flex-col gap-4 md:flex-row relative border-white/[0.2] bg-black shadow-input flex justify-center gap-x-2 space-x-0 md:space-x-4 px-8 py-4"
+          className="flex-col gap-4 md:flex-row relative border-white/[0.2] bg-zinc-900 shadow-input flex justify-center gap-x-2 space-x-0 md:space-x-4 px-8 py-4"
         >
           {children}
         </nav>
@@ -104,11 +104,7 @@ export const Menu = ({ setActive, children }) => {
 
 export const HoveredLink = ({ to = '/', children, ...rest }) => {
   return (
-    <Link
-      to={to}
-      {...rest}
-      className="text-neutral-700 dark:text-neutral-200 hover:text-white"
-    >
+    <Link to={to} {...rest} className="text-white">
       {children}
     </Link>
   );
