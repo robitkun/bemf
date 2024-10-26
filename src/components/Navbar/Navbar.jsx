@@ -13,7 +13,7 @@ export function Navbar({ className }) {
         className
       )}
     >
-      <h1 className="text-white">BEM FMIKOM </h1>
+      <h1 className="text-white text-3xl font-semibold">BEM FMIKOM </h1>
       <Menu setActive={setActive}>
         <HoveredLink to="/">Beranda</HoveredLink>
         <HoveredLink to="/tentang">Tentang</HoveredLink>

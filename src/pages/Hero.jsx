@@ -1,9 +1,4 @@
 const Hero = () => {
-  // const splitText = (text) => {
-  //   text.split('').map((t) => {
-  //     <span>{t}</span>;
-  //   });
-  // };
   return (
     <>
       <div className="w-full h-screen bg-zinc-900  rounded-lg">
@@ -24,7 +19,7 @@ const Hero = () => {
             </h1>
           </div>
         </div>
-        <div className="border-t-[1px] border-white mt-24"></div>
+        <div className="border-t-[1px] border-white mt-12"></div>
       </div>
     </>
   );
